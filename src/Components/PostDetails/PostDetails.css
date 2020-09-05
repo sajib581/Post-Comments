@@ -1,0 +1,9 @@
+.post-details {
+    background-color: #2b7192;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+}

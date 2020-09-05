@@ -1,0 +1,20 @@
+.email {
+    color: gold;
+    margin-left: 15px;
+    padding-top: 7px;
+}
+
+.upper {
+    display: inline-flex;
+}
+
+.comment {
+    margin: 10px 0px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #2b5468;
+}
+
+.comment:hover {
+    background-color: rgb(31, 34, 37);
+}
