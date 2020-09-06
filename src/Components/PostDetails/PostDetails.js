@@ -6,7 +6,7 @@ import './PostDetails.css'
 const PostDetails = () => {
     const {postId} = useParams()
     const [postData, setPostData] = useState({});
-    const [postComments, setPostComments] = useState([]);
+    
     //get single post data
     useEffect(()=>{
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
@@ -14,6 +14,7 @@ const PostDetails = () => {
         .then(data =>setPostData(data))
     })
     //get all comments
+    const [postComments, setPostComments] = useState([]);
     useEffect(()=>{
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         .then(res => res.json())

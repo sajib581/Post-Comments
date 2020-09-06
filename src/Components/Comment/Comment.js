@@ -12,19 +12,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Comment = (props) => {
-    let {email,body} = props.comment ;
-    const [image, setImage] = useState(0);
-    useEffect(()=>{
-      const URL = 'https://randomuser.me/api/?results=1'
-      fetch(URL)
-      .then(res => res.json())
-      .then(data=> setImage(data.results[0].picture.medium) )
-    },[])
+    let {email,body,id} = props.comment ;
+     if(id>100){
+       const lastNumber = id%10 ;
+      id = Math.round((id/10) + lastNumber) ;
+      
+     }
+  
     const classes = useStyles();
     return (
       <div className="comment">
           <div className="upper">
-              <Avatar alt="Remy Sharp" src={image} />
+              <Avatar alt="Remy Sharp" src={`https://randomuser.me/api/portraits/men/${id}.jpg`} />
               <span className="email">{email}</span>
           </div>
           <div className="lower">

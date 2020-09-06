@@ -25,15 +25,7 @@ const useStyles = makeStyles({
   },
 });
 const Post = (props) => {
-    const {title,body,id} = props.post
-    const [image, setImage] = useState(0);
-
-    useEffect(()=>{
-      const URL = 'https://randomuser.me/api/?results=1'
-      fetch(URL)
-      .then(res => res.json())
-      .then(data=> setImage(data.results[0].picture.medium) )
-    },[])
+    const {title,body,id,userId} = props.post
 
     let history = useHistory()
     const postHandeler = () => {
@@ -50,7 +42,7 @@ const Post = (props) => {
            
           <Box display="flex" flexDirection="row" p={1} m={1} bgcolor="background.paper">
             <Box >
-              <Avatar alt="Remy Sharp" src={image} />
+              <Avatar alt="Remy Sharp" src={`https://randomuser.me/api/portraits/men/${userId}.jpg`} />
             </Box>
             <Box p={1} >
               {title.slice(0,12)+" ....."}
